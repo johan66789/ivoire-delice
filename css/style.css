@@ -477,3 +477,13 @@
     padding-right: 0;
     border-right: none;
 }
+
+
+/* Uniformiser la taille des images du menu du midi */
+.menu-img {
+    height: 200px;       /* Hauteur fixe pour toutes les images */
+    width: 100%;         /* Remplit la largeur de la carte */
+    object-fit: cover;   /* Remplit le cadre sans déformer, recadrage si nécessaire */
+    border-top-left-radius: 0.25rem;  /* Pour arrondir les coins comme card bootstrap */
+    border-top-right-radius: 0.25rem;
+}
