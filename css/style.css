@@ -524,6 +524,20 @@
     padding: 10px 25px;
 }
 
+/* mobile : bouton en dessous */
+@media (max-width: 767px) {
+    .press-overlay {
+        display: none !important; /* plus d'overlay sur mobile */
+    }
+
+    .press-card .btn.d-block.d-md-none {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
 
 /* Menu midi */
 .menu-midi-card h2 {
