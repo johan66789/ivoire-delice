@@ -549,3 +549,16 @@
     font-size: 1rem;
     margin-bottom: 8px;
 }
+
+
+
+
+.contact-link {
+  color: #ffffff; /* couleur normale, blanc par exemple */
+  text-decoration: none; /* supprime le soulignement */
+  transition: color 0.3s ease; /* transition douce */
+}
+
+.contact-link:hover {
+  color: #ffcc00; /* couleur au survol, exemple doré */
+}
