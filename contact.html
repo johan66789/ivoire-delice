@@ -34,9 +34,48 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
     <link rel="shortcut icon" href="./img/hot-pot.png" type="image/x-icon">
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
+    <script src="contact-email.js" defer></script>
+
 </head>
 
+
+
+
 <body>
+
+<!-- <div class="popupBackground" >
+    <div class="popup">
+        <p>Votre message a bien été envoyé ✔</p>
+        <button id="btnok">OK</button>
+    </div>
+</div> -->
+
+<!-- Modal succès -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header bg-success text-white">
+        <h5 class="modal-title">
+          <i class="fa fa-check-circle me-2"></i>Message envoyé
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <p>Votre message a bien été envoyé ✔</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+          OK
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
     <div class="container-xxl bg-white p-0">
         <!-- Spinner Start -->
         <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
@@ -172,24 +211,25 @@
                     <div class="col-md-6">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
                             <h2 class="mb-1">Laissez nous un message</h2>
-                            <form>
+                            <form id="formulaire">
                                 <div class="row g-3">
                                     <div class="col-md-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Votre nom" required>
-                                            <label for="name">Nom & Prénom(s)</label>
+                                            <input type="text" class="form-control" id="nom" placeholder="Votre nom" required>
+                                            <label for="nom">Nom & Prénom(s)</label>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-floating">
+                                            
                                             <input type="email" class="form-control" id="email" placeholder="Votre Email" required>
                                             <label for="email">Email</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Sujet" required>
-                                            <label for="subject">Objet</label>
+                                            <input type="text" class="form-control" id="objet" placeholder="Sujet" required>
+                                            <label for="sujet">Objet</label>
                                         </div>
                                     </div>
                                     <div class="col-12">
@@ -199,8 +239,12 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Envoyez le message</button>
+                                        <button class="btn btn-primary w-100 py-3 boutton-envoyer" type="button">Envoyez le message</button>
                                     </div>
+                                    <div class="loading-icon mt-2" id="loading-icon" style="display:none;">
+                                        Envoi en cours <i class="fas fa-spinner fa-spin"></i>
+                                    </div>
+
                                 </div>
                             </form>
                         </div>
@@ -306,6 +350,7 @@ Ivoire Délices, restaurant africain à Évreux, cuisine ivoirienne, sénégalai
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
 </body>
 
 </html>
